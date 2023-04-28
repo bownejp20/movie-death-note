@@ -1,39 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Movie Death Note</title>
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="font-awesome.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://unpkg.com/phosphor-icons"></script>
+    <title>Movie Death Note</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Death Note</h1>
-  <h2>If you watch the movie you must add a name......</h2>
+<div class="container">
 
+    <div class="jumbotron text-center">
+        <h1>You'll Hold The Power</h1>
+        <img src="img/deathNoteBook.jpg" alt="Death Note Book Photo">
 
-  <h3>Notes</h3>
-  <ul class="messages">
-  <% for(var i=0; i<messages.length; i++) {%>
-    <li class="message">
-      <span><%= messages[i].name %></span>
-      <span><%= messages[i].note %></span>
-      <span><i class="ph ph-knife"></i></span>
-      <span><i class="ph ph-skull"></i></span>
-    </li>
-  <% } %>
-  </ul>
+        <p>Login or Signup:</p>
 
-  <h2>Add a message</h2>
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
 
-  <form action="/messages" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="note" name="note">
-    <button type="submit">No Going Back</button>
-  </form>
+    </div>
 
-  <script src="main.js"></script>
-
+</div>
 </body>
 </html>
