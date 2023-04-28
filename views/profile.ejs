@@ -11,7 +11,7 @@
 <div class="container">
 
     <div class="page-header text-center">
-        <h1>Your Death Note <span class="ph ph-knife"></span></h1>
+        <h1><span class="ph ph-apple-logo"></span> Death Note <span class="ph ph-knife"></span></h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
 
@@ -51,7 +51,7 @@
           <h4>If you watch the movie you MUST add a name!</h4>
         <% if (user.local.email) { %>
           <form action="/messages" method="POST">
-            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" value="" name="name" placeholder="name">
             <button type="submit">No Going Back</button>
           </form>
         </div>

@@ -1,4 +1,4 @@
-module.exports = function (app, passport, db) {
+module.exports = function (app, passport, db, Deaths) {
 
   // normal routes ===============================================================
 
@@ -23,6 +23,27 @@ module.exports = function (app, passport, db) {
     })
   });
 
+
+  app.get('/waysToDie', (req, res) => {
+      const newDeaths = new Deaths();
+      newDeaths.death =  ['Impaled through the neck with a steak knife',
+      'Accidentally electrocuted until head explodes',
+      'Fell from the Seattle Great Wheel',
+      'Pushed in front of a train',
+      'Blown up by a grenade',
+      'Died of a heart attack',
+      'Jumped off a 20-floor building',
+      'Partially decapitated by a ladder',
+      'Ran over by an unknown SWAT truck',
+      'Died of smoke inhalation'
+      ]
+      newDeaths.save(function(err) {
+        if (err)
+            throw err;
+        res.send({success:newDeaths});
+    });
+  })
+
   // LOGOUT ==============================
   app.get('/logout', function (req, res) {
     req.logout(() => {
@@ -34,10 +55,18 @@ module.exports = function (app, passport, db) {
   // message board routes ===============================================================
 
   app.post('/messages', (req, res) => {
-    db.collection('deathSentences').save({ name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown: 0 }, (err, result) => {
-      if (err) return console.log(err)
-      console.log('saved to database')
-      res.redirect('/profile')
+    Deaths.findOne({}, (error, docs) => {
+      if(error){
+        console.log(error)
+      }else {
+        const num = Math.round(Math.random() * docs.death.length)
+        console.log(docs.death[num], num)
+        db.collection('deathSentences').save({ name: req.body.name, msg: docs.death[num]}, (err, result) => {
+          if (err) return console.log(err)
+          console.log('saved to database')
+          res.redirect('/profile')
+        })
+      }
     })
   })
 
