@@ -70,35 +70,6 @@ module.exports = function (app, passport, db, Deaths) {
     })
   })
 
-  app.put('/messages', (req, res) => {
-    db.collection('deathSentences')
-      .findOneAndUpdate({ name: req.body.name, msg: req.body.msg }, {
-        $inc: {
-          thumbUp: 1
-        }
-      }, {
-        sort: { _id: -1 },
-        upsert: true
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
-  })
-
-  app.put('/messages/thumbDown', (req, res) => {
-    db.collection('deathSentences')
-      .findOneAndUpdate({ name: req.body.name, msg: req.body.msg }, {
-        $inc: {
-          thumbDown: - 1
-        }
-      }, {
-        sort: { _id: -1 },
-        upsert: true  //might be a bug later on that leon leaves and you need to fix
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
-  })
 
   app.delete('/messages', (req, res) => {
     db.collection('deathSentences').findOneAndDelete({ name: req.body.name, msg: req.body.msg }, (err, result) => {

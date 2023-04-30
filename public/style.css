@@ -1,7 +1,135 @@
-body{
-  padding-top:80px;
-  word-wrap:break-word;
+/* Body Styles */
+html{
+  height: 100%;
+ 
 }
-img{
-  height: 200px;
+body {
+  font-family: Arial, sans-serif;
+  background: url('/img/whiteBlack.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+/* Header Styles */
+.page-header {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.page-header h1 {
+  font-size: 42px;
+  color: rgb(132, 68, 68);
+  margin: 0;
+}
+
+.page-header .btn {
+  margin-top: 15px;
+}
+
+/* User Information Styles */
+.well {
+  background-color: #F9F9F9;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.well h3 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.well p {
+  margin: 0;
+}
+
+.btn-default {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-color: #CCCCCC;
+}
+.p{
+  padding: 20px 8px;
+}
+
+/* Sentences Styles */
+.messages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.message {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message span:nth-child(1) {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.message span:nth-child(2) {
+  flex: 1;
+}
+
+.ph-skull {
+  color: #FF0000;
+}
+.ph-apple-logo{
+  color: #FF0000;
+}
+.ph-knife{
+  color:#333333;
+}
+
+h4 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #CCCCCC;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: rgb(132, 68, 68);
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(204, 142, 142);
+  
 }

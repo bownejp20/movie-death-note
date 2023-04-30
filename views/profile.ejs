@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Movie Death Note</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/phosphor-icons"></script>
 </head>
@@ -11,8 +11,7 @@
 <div class="container">
 
     <div class="page-header text-center">
-        <h1><span class="ph ph-apple-logo"></span> Death Note <span class="ph ph-knife"></span></h1>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        <h1> Death Note <span class="ph ph-knife"></span></h1>
     </div>
 
     <div class="row">
@@ -23,13 +22,12 @@
                 <h3><span class="fa fa-user"></span> Local</h3>
 
                 <% if (user.local.email) { %>
-                    <p>
+                    <p class="p">
                         <strong>id</strong>: <%= user._id %><br>
                         <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
                     </p>
 
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
                 <% } else { %>
                     <a href="/connect/local" class="btn btn-default">Connect Local</a>
                 <% } %>
@@ -37,7 +35,7 @@
             </div>
         </div>
         <div class="col-sm-6">
-          <h2>Sentences</h2>
+          <h2>Sentences <span class="ph ph-apple-logo"></span></h2>
           <ul class="messages">
           <% for(var i=0; i<messages.length; i++) {%>
             <li class="message">
